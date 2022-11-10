@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tugas 7 PBP',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   Color _fontColor = Colors.red;
-  String _text = "Genap";
+  String _text = "GENAP";
   bool _visible = false;
 
   void _incrementCounter() {
@@ -40,11 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
 
       if(_counter%2==0){
-        _text = "Genap";
+        _text = "GENAP";
         _fontColor = Colors.red;
       }
       else{
-        _text = "Ganjil";
+        _text = "GANJIL";
         _fontColor = Colors.blue;
       }
       _visible = true;
@@ -61,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
         }
 
         if(_counter%2==0){
-          _text = "Genap";
+          _text = "GENAP";
           _fontColor = Colors.red;
         }
         else{
-          _text = "Ganjil";
+          _text = "GANJIL";
           _fontColor = Colors.blue;
         }
 

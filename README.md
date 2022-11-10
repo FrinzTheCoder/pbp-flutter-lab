@@ -2,26 +2,30 @@
 # Tugas 7 PBP
 
 1. 
-- Stateless widget adalah widget yang tidak menyimpan state (semacam informasi). Stateless widget tidak bisa beubah lewat internal action dan hanya bisa berubah oleh external events melalui parent dari widget tersebut. Pada stateless widget, child menerima deskripsi dari parent widget tersebut. Stateless widget hanya punya final properties.
-- Berbeda dengan stateless widget, stateful widget adalah widget yang bersifat dinamis
+- Stateless widget adalah widget yang state nya tidak bisa diubah setelah dibuilt. Dengan kata lain, setiap perubahan informasi (variabel, icon, button, data) tidak akan mengubah statenya. Oleh karena itu, stateless widget adalah widget yang bersifat statis. Contoh dari stateless widget adalah Text, RaisedButton, dan IconButtons.
+- Berbeda dengan stateless widget, stateful widget adalah widget yang memiliki state yang bisa diubah. State ini dapat berubah setelah widget dibuilt. Stateful widget bersifat dinamis dan bisa berubah berkali-kali selama program dijalankan. Stateful widget dapat membuat tampilan sesuai dengan variabel, input, atau data yang ingin ditampilkan user secara dinamis(bisa berubah-ubah). Contoh dari stateful widget adalah CheckBox, RadioButton, dan TextField.
 
 2. 
+- MaterialApp: Menyediakan tools dan theme untuk digunakan di aplikasi.
 - Scaffold: Menampilkan basic material design dari visual layout structure.
-- AppBar: Menampilkan tampilan semacam header pada aplikasi
+- AppBar: Menampilkan tampilan semacam header pada bagian atas aplikasi
 - Center: Widget yang menampilkan child-child nya pada posisi tengah halaman.
 - Column: Widget yang menampilkan child-child nya dalam bentuk vertikal (seperti kolom)
 - Text: Menampilkan tulisan/teks
 - Theme: Memberikan tema (warna, font) pada bagian tertentu di aplikasi
-- Padding: Widget untuk menampilkan child-child nya dengan padding.
+- Padding: Widget untuk menampilkan child-child nya dengan padding (jarak content dengan batas container).
 - Row: Widget yang menampilkan child-child nya dalam bentuk horizontal (seperti baris)
 - Align: Widget yang melakukan allignment (rata kiri/kanan/dll) pada child-child nya
 - Visibility: Berfungsi untuk memunculkan/menghilangkan childnya.
-- FloatingActionButton: Tombol yang melayang, berfungsi untuk increment/decrement pada tugas ini.
-- Icon: merepresentasikan icon
+- FloatingActionButton: Tombol yang melayang, berfungsi untuk menjalankan suatu fungsi (increment/decrement pada tugas ini).
+- Icon: Menampilkan icon
 
-3. Pemanggilan fungsi setState() berfungsi untuk memberitahu framework bahwa internal state dari objek tertentu sudah berubah sehingga ada kemungkinan tampilan user juga berubah. Selanjutnya, widget yang memanggil setState() akan dibuild ulang sehingga tampilan yang dilihat user akan terupdate sesuai dengan data terkini. Varibel yang terdampak adalah variabel-variabel yang ada di widget yang memanggil fungsi setState.
+3. Pemanggilan fungsi setState() berfungsi untuk memberitahu framework bahwa internal state dari objek tertentu sudah berubah sehingga ada kemungkinan tampilan user juga berubah. Selanjutnya, widget yang memanggil setState() akan dibuild ulang sehingga tampilan yang dilihat user akan terupdate sesuai dengan data terkini. Varibel yang terdampak adalah variabel-variabel yang ada di widget yang memanggil fungsi setState().
 
-4. Final:
+4. 
+final: variabel final akan diinisiasi saat runtime dan hanya bisa di assign sekali saja. Final variable bisa didefinisikan dalam class dan fungsi.
+
+const: variabel const akan diinisasi saat compile-time dan sudah ter-assign saat program berjalan (runtime). Const tidak dapat didefinisikan daam class, tapi bisa didefinisikan di dalam fungsi. Const tidak bisa diubah saat runtime.
 
 5. 
 - Membuat programm Flutter baru dengan perintah flutter create counter_7. Selanjutnya, program yang saya buat hanya memodifikasi bagian-bagian yang sudah ada dari Flutter Demo (defaultnya).
