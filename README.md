@@ -40,3 +40,29 @@ const: variabel const akan diinisasi saat compile-time dan sudah ter-assign saat
 
 - Membuat dua buah floatingActionButton untuk tampilan tombol (-) dan (+) yang di align sesuai ketentuan soal. Tombol (-) akan memanggil fungsi _decrementCounter, sedangkan tombol (+) akan memanggil fungsi _incrementCounter.
 
+# Tugas 8 PBP
+1. Pada Navigator.push, halaman baru yang ingin ditampilkan akan di push ke stack. Karena sifat dari struktur data stack adalah LIFO, ketika kita melakukan Navigator.pop(), pengguna akan kembali ke halaman sebelumnya yang ditampilkan. Pada Navigator.pushReplacement, halaman baru yang ingin ditampilkan akan me-replace halaman sebelumnya pada stack sehingga pengguna tidak dapat kembali ke halaman sebelumnya.
+
+2. 
+- Scaffold: Struktur layout halaman aplikasi
+- Center: Menampilkan child widgetnya di tengah
+- DropdownButton: Menampilkan dropdown button
+- ListView: Widget scrollable untuk menampilkan children-children nya
+- ListTile: Sebuah baris yang mengandung teks, icon, dll.
+- Form: Menampilkan input atau form field
+- Drawer: Panel yang muncul dari pinggir untuk melakukan navigasi
+- Column: Menampilkan children nya dalam bentuk kolom.
+- Card: Widget card untuk menampilkan informasi dalam bentuk semacam kartu
+- Form: Untuk melakukan grouping pada beberapa form field widgets.
+- TextFormField: melakukan input (form) dalam bentuk teks
+- OutlinedButton: sebuah button dengan outline border
+- TextButton: untuk melakukan suatu aksi/perintah
+
+3. onEnter, onExit, onHover, onSaved, onChanged, dan lain-lain.
+
+4. Navigator bekerja dengan memanfaatkan prinsip struktur data stack dimana halaman yang ingin ditampilkan kepada pengguna berada pada top of stack. Jika pengguna ingin mengganti ke halaman baru, maka halaman tersebut akan di push ke stack. Jika pengguna ingin kembali ke halaman sebelumnya, maka stack akan di pop.
+
+5. 
+- Menambahkan drawer pada file terpisah (drawer.dart) yang terdiri dari 3 listile untuk navigasi.
+- Membuat halaman form yang menerima input sesuai soal dan tombol submitnya. Membuat class mycard sebagai representasi card yang akan diisi di form. Dilakukan di file form.dart
+- Membuat halaman data budget dan menampilkan semua data yang ada di card ke pengguna. Dilakukan di file data.dart

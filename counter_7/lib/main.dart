@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:counter_7/form.dart';
+import 'package:counter_7/data.dart';
+import 'package:counter_7/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,11 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
 
-      if(_counter%2==0){
+      if (_counter % 2 == 0) {
         _text = "GENAP";
         _fontColor = Colors.red;
-      }
-      else{
+      } else {
         _text = "GANJIL";
         _fontColor = Colors.blue;
       }
@@ -52,23 +53,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _decrementCounter() {
-    if(_counter>=1){
+    if (_counter >= 1) {
       setState(() {
         _counter--;
-        
-        if(_counter==0){
-          _visible=false;
+
+        if (_counter == 0) {
+          _visible = false;
         }
 
-        if(_counter%2==0){
+        if (_counter % 2 == 0) {
           _text = "GENAP";
           _fontColor = Colors.red;
-        }
-        else{
+        } else {
           _text = "GANJIL";
           _fontColor = Colors.blue;
         }
-
       });
     }
   }
@@ -76,56 +75,50 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '$_text',
-              style: TextStyle(
-                color: _fontColor,
-              )
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-      
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 30),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Visibility(
-                visible: _visible,
+        drawer: DrawerWidget(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('$_text',
+                  style: TextStyle(
+                    color: _fontColor,
+                  )),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Visibility(
+                    visible: _visible,
+                    child: FloatingActionButton(
+                      onPressed: _decrementCounter,
+                      tooltip: 'Decrement',
+                      child: const Icon(Icons.remove),
+                    )),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
                 child: FloatingActionButton(
-                  onPressed: _decrementCounter,
-                  tooltip: 'Decrement',
-                  child: const Icon(Icons.remove),
-                )
-              ),
-            ),
-
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                onPressed: _incrementCounter,
-                tooltip: 'Increment',
-                child: const Icon(Icons.add),
-              ),
-            )
-          ],
-        ),
-      )
-    )
-    ;
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: const Icon(Icons.add),
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }
