@@ -66,3 +66,40 @@ const: variabel const akan diinisasi saat compile-time dan sudah ter-assign saat
 - Menambahkan drawer pada file terpisah (drawer.dart) yang terdiri dari 3 listile untuk navigasi.
 - Membuat halaman form yang menerima input sesuai soal dan tombol submitnya. Membuat class mycard sebagai representasi card yang akan diisi di form. Dilakukan di file form.dart
 - Membuat halaman data budget dan menampilkan semua data yang ada di card ke pengguna. Dilakukan di file data.dart
+
+# Tugas 9 PBP
+1. Ya, kita bisa melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Namun, hal ini tidak akan lebih baik (bahkan bisa lebih buruk) daripada membuat model sebelum pengambilan data JSON. Model dibuat untuk dapat mengambil data JSON dengan lebih terstruktur. Dalam hal ini, tiap field dari data JSON akan menjadi property dari kelas model yang sudah ditentukan tipe datanya sehingga pengaksesan data pada field tertentu bisa dilakukan hanya dengan mengakses properti dari class model yang sudah dibuat.
+
+2. 
+- Scaffold: Struktur layout halaman aplikasi
+- Center: Menampilkan child widgetnya di tengah
+- FutureBuilder: Widget yang membangun dirinya sendiri berdasarkan snapshot terakhir dari Future.
+- ListView: Widget scrollable untuk menampilkan children-children nya
+- Drawer: Panel yang muncul dari pinggir untuk melakukan navigasi
+- Inkwell: Area rectangular yang merespon ketika ditekan(diklik).
+- Column: Menampilkan children nya dalam bentuk kolom.
+- Text: menampilkan teks
+- RichText: menampilkan teks dengan style yang berbeda-beda
+- Checkbox: membuat checkbox
+- Container: menampung widget lain
+- ElevatedButton: Button untuk melakukan aksi.
+- Alignment: Widget untuk menerapkan alignment pada childnya
+
+3. 
+- Membuat fungsi Future yang akan dipanggil oleh FutureBuilder
+- Memanggil url yang berisi JSON untuk di-parse.
+- Melakukan pemanggilan dengan GET method dari package http
+- Melakukan decode terhadap data JSON dari URL yang dipanggil sebelumnya.
+- Memasukkan data JSON ke model yang sudah kita buat. Setiap objek dimasukkan ke list lalu di return.
+- Membuat FutureBuilder yang didalamnya terdapat parameter future(untuk memanggil fungsi fetchMyWatchList) dan builder yang memanggil fungsi snapshot yang akan mengembalikan widget sesuai data-data yang di fetch. Di sini, kita dapat menggunakan Listview.builder untuk membuild widget-widget sesuai data yang kita fetch sebelumnya.
+
+4. 
+- Membuat class sebagai representasi model dari data JSON pada Tugas 3 (dengan QuickType) dan disimpan di mywatchlist.dart
+- Menambahkan tombol navigasi pada drawer untuk ke halaman mywatchlist
+- Menginstall http package dan allow internet pada prject.
+- Menambahkan file fetch.dart yang fungsinya khusus untuk melakukan fetch data dari URL Tugas 3. (Detailnya dijelaskan di pertanyaan 3)
+- Menambahkan halaman mywatchlist yang berisi semua watchlist pada endpoint JSON di Tugas 3. Bagian ini dikerjakan di mywatchlist_page.dart. (Detailnya dijelaskan di pertanyaan 3)
+- Membuat setiap Inkwell bisa di-klik untuk mengarahkan halaman ke Detailpage (sesuai ketentuan soal). Dalam hal ini, data-data yang diperlukan juga di-pass sebagai parameter.
+- Membuat file mywatchlist_detail.dart untuk menampilkan detail data berdasarkan parameter yang di-pass. Halaman ini akan berisi detail dari film yang diklik di halaman utama My Watchlist.
+- Menambahkan tombol back pada halaman detail untuk kembali ke daftar watchlist.
+- Menambahkan beberapa fungsi "helper" (giveColor, checkValue) untuk membantu mengimplementasikan fungsionalitas yang diinginkan.
